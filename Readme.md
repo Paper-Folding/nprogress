@@ -1,10 +1,6 @@
 NProgress
 =========
 
-[![Status](https://api.travis-ci.org/rstacruz/nprogress.svg?branch=master)](http://travis-ci.org/rstacruz/nprogress) 
-[![npm version](https://img.shields.io/npm/v/nprogress.png)](https://npmjs.org/package/nprogress "View this project on npm")
-[![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/nprogress/badge?style=rounded)](https://www.jsdelivr.com/package/npm/nprogress)
-
 > Minimalist progress bar
 
 Slim progress bars for Ajax'y applications. Inspired by Google, YouTube, and
@@ -13,25 +9,12 @@ Medium.
 Installation
 ------------
 
-Add [nprogress.js] and [nprogress.css] to your project.
-
-```html
-<script src='nprogress.js'></script>
-<link rel='stylesheet' href='nprogress.css'/>
-```
+Add [nprogress.js] and [nprogress.scss] to your project.
 
 NProgress is available via [bower] and [npm].
 
-    $ npm install --save nprogress
-
-Also available via [unpkg] CDN:
-
-- https://unpkg.com/nprogress@0.2.0/nprogress.js
-- https://unpkg.com/nprogress@0.2.0/nprogress.css
-
-[bower]: http://bower.io/search/?q=nprogress
-[npm]: https://www.npmjs.org/package/nprogress
-[unpkg]: https://unpkg.com/
+    $ npm install @paper-folding/nprogress
+    $ npm install @types/paper-folding__nprogress@npm:@types/nprogress -D  # for typing
 
 Basic usage
 -----------
@@ -194,19 +177,7 @@ Resources
 Support
 -------
 
-__Bugs and requests__: submit them through the project's issues tracker.<br>
-[![Issues](http://img.shields.io/github/issues/rstacruz/nprogress.svg)]( https://github.com/rstacruz/nprogress/issues )
-
-__Questions__: ask them at StackOverflow with the tag *nprogress*.<br>
-[![StackOverflow](http://img.shields.io/badge/stackoverflow-nprogress-brightgreen.svg)]( http://stackoverflow.com/questions/tagged/nprogress )
-
-__Chat__: join us at gitter.im.<br>
-[![Chat](http://img.shields.io/badge/gitter-rstacruz/nprogress-brightgreen.svg)]( https://gitter.im/rstacruz/nprogress )
-
-[default template]: https://github.com/rstacruz/nprogress/blob/master/nprogress.js#L31
-[Turbolinks]: https://github.com/rails/turbolinks
-[nprogress.js]: http://ricostacruz.com/nprogress/nprogress.js
-[nprogress.css]: http://ricostacruz.com/nprogress/nprogress.css
+__Sorry, no support.__
 
 Thanks
 ------
@@ -220,6 +191,3 @@ Authored and maintained by Rico Sta. Cruz with help from [contributors].
 
 [MIT License]: http://mit-license.org/
 [contributors]: http://github.com/rstacruz/nprogress/contributors
-
-[![](https://img.shields.io/github/followers/rstacruz.svg?style=social&label=@rstacruz)](https://github.com/rstacruz) &nbsp;
-[![](https://img.shields.io/twitter/follow/rstacruz.svg?style=social&label=@rstacruz)](https://twitter.com/rstacruz)

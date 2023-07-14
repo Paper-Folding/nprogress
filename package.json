@@ -1,11 +1,11 @@
 {
-  "name": "nprogress",
-  "author": "Rico Sta. Cruz <hi@ricostacruz.com>",
-  "description": "Simple slim progress bars",
-  "version": "0.2.0",
+  "name": "@paper-folding/nprogress",
+  "author": "Paper-Folding",
+  "description": "My modified version of simple slim progress bars",
+  "version": "0.2.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rstacruz/nprogress.git"
+    "url": "https://github.com/Paper-Folding/nprogress.git"
   },
   "scripts": {
     "test": "mocha"
@@ -13,13 +13,14 @@
   "main": "nprogress.js",
   "license": "MIT",
   "devDependencies": {
+    "@types/nprogress": "^0.2.0",
     "chai": "~1.6.1",
     "jquery": "^3.5.0",
     "jsdom": "^5.4.3",
     "mocha": "^2.2.4",
-    "mocha-jsdom": "^0.3.0"
+    "mocha-jsdom": "^0.3.0",
+    "sass": "^1.63.6"
   },
-  "dependencies": {},
   "jspm": {
     "format": "global",
     "shim": {
