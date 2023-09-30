@@ -2,16 +2,11 @@ import NProgress from "./nprogress";
 import $  from "jquery";
 
 $("body").show();
-$(".version").text(NProgress.version);
-NProgress.start();
 setTimeout(function () {
     NProgress.done();
     $(".fade").removeClass("out");
 }, 1000);
 
-$("#b-0").click(function () {
-    NProgress.start();
-});
 $("#b-40").click(function () {
     NProgress.set(0.4);
 });

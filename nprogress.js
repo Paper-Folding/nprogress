@@ -88,13 +88,13 @@ NProgress.set = function (n) {
 NProgress.hide = function () {
     if (!NProgress.isRendered()) return;
 
-    document.getElementById("nprogress").classList.add("hidden");
+    NProgress.dom.classList.add("hidden");
 };
 
 NProgress.show = function () {
     if (!NProgress.isRendered()) return;
 
-    document.getElementById("nprogress").classList.remove("hidden");
+    NProgress.dom.classList.remove("hidden");
 };
 
 NProgress.isStarted = function () {
@@ -171,12 +171,12 @@ NProgress.trickle = function () {
  */
 
 NProgress.render = function (fromStart) {
-    if (NProgress.isRendered()) return document.getElementById("nprogress");
+    if (NProgress.isRendered()) return NProgress.dom;
 
     addClass(document.documentElement, "nprogress-busy");
 
     var progress = document.createElement("div");
-    progress.id = "nprogress";
+    progress.className = "nprogress";
     progress.innerHTML = Settings.template;
 
     var bar = progress.querySelector(Settings.barSelector),
@@ -193,6 +193,7 @@ NProgress.render = function (fromStart) {
     }
 
     parent.appendChild(progress);
+    NProgress.dom = progress;
     return progress;
 };
 
@@ -206,8 +207,10 @@ NProgress.remove = function () {
         document.querySelector(Settings.parent),
         "nprogress-custom-parent"
     );
-    var progress = document.getElementById("nprogress");
+    var progress = NProgress.dom;
     progress && removeElement(progress);
+    NProgress.dom = undefined;
+    NProgress.set(0);
 };
 
 /**
@@ -215,7 +218,7 @@ NProgress.remove = function () {
  */
 
 NProgress.isRendered = function () {
-    return !!document.getElementById("nprogress");
+    return NProgress.dom != null;
 };
 
 /**
