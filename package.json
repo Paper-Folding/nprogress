@@ -2,7 +2,7 @@
   "name": "@paper-folding/nprogress",
   "author": "Paper-Folding",
   "description": "My modified version of simple slim progress bars",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/Paper-Folding/nprogress.git"
@@ -15,7 +15,6 @@
   "main": "nprogress.js",
   "license": "MIT",
   "devDependencies": {
-    "@types/nprogress": "^0.2.0",
     "jquery": "^3.7.1",
     "prettier": "3.0.3",
     "sass": "^1.63.6",
