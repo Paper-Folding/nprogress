@@ -62,8 +62,9 @@ NProgress.set = function (n) {
         speed = Settings.speed,
         ease = Settings.easing;
 
-    progress.offsetWidth; /* Repaint */
+    NProgress.show();
 
+    progress.offsetWidth; /* Repaint */
     queue(function (next) {
         // Set positionUsing if it hasn't already been set
         if (Settings.positionUsing === "")
@@ -82,6 +83,18 @@ NProgress.set = function (n) {
     });
 
     return this;
+};
+
+NProgress.hide = function () {
+    if (!NProgress.isRendered()) return;
+
+    document.getElementById("nprogress").classList.add("hidden");
+};
+
+NProgress.show = function () {
+    if (!NProgress.isRendered()) return;
+
+    document.getElementById("nprogress").classList.remove("hidden");
 };
 
 NProgress.isStarted = function () {
@@ -195,7 +208,6 @@ NProgress.remove = function () {
     );
     var progress = document.getElementById("nprogress");
     progress && removeElement(progress);
-    NProgress.set(0);
 };
 
 /**

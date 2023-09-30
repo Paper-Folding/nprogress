@@ -24,3 +24,6 @@ $("#b-100").click(function () {
 $("#b-rm").click(function () {
     NProgress.remove();
 });
+$("#b-hide").click(function () {
+    NProgress.hide();
+});

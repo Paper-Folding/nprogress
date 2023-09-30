@@ -4,6 +4,8 @@
     pointer-events: none;
 
     height: 2px;
+    opacity: 1;
+    transition: opacity cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s;
 
     .bar {
         background: var(--nprogress-bar-color, #e00);
@@ -45,5 +47,9 @@
                 0 0 10px var(--nprogress-bar-color-full, #e00),
                 0 0 5px var(--nprogress-bar-color-full, #e00);
         }
+    }
+
+    &.hidden {
+        opacity: 0.003;
     }
 }
