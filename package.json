@@ -8,41 +8,17 @@
     "url": "https://github.com/Paper-Folding/nprogress.git"
   },
   "scripts": {
-    "test": "mocha"
+    "dev": "vite",
+    "prebuild": "prettier . --write",
+    "build": "tsc && vite build"
   },
   "main": "nprogress.js",
   "license": "MIT",
   "devDependencies": {
     "@types/nprogress": "^0.2.0",
-    "chai": "~1.6.1",
-    "jquery": "^3.5.0",
-    "jsdom": "^5.4.3",
-    "mocha": "^2.2.4",
-    "mocha-jsdom": "^0.3.0",
-    "sass": "^1.63.6"
-  },
-  "jspm": {
-    "format": "global",
-    "shim": {
-      "nprogress": {
-        "deps": [
-          "./nprogress.css!"
-        ]
-      }
-    },
-    "dependencies": {
-      "css": "*"
-    }
-  },
-  "spm": {
-    "main": "nprogress.js",
-    "output": [
-      "nprogress.css"
-    ],
-    "ignore": [
-      "support",
-      "test",
-      "vendor"
-    ]
+    "jquery": "^3.7.1",
+    "prettier": "3.0.3",
+    "sass": "^1.63.6",
+    "vite": "^4.4.9"
   }
 }
