@@ -195,6 +195,7 @@ NProgress.remove = function () {
     );
     var progress = document.getElementById("nprogress");
     progress && removeElement(progress);
+    NProgress.set(0);
 };
 
 /**

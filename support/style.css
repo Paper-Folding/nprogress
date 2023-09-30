@@ -1,3 +1,7 @@
+:root {
+  color-scheme: dark;
+}
+
 i, b {
   font-style: normal;
   font-weight: 400;
@@ -8,15 +12,10 @@ body, html {
   margin: 0;
 }
 
-body {
-  background: white;
-}
-
 body, td, input, textarea {
   font-family: source sans pro, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #222;
 }
 
 button {
@@ -92,12 +91,10 @@ button {
 
 .button:hover {
   background: #2d9;
-  color: #fff;
 }
 
 .button.primary {
   background: #2d9;
-  color: #fff;
 }
 .button.primary:hover {
   background: #1c8;
@@ -111,7 +108,7 @@ button {
 .controls {
   text-align: left;
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 350px;
   color: #666;
 }
 

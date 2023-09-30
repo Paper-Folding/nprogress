@@ -21,3 +21,6 @@ $("#b-inc").click(function () {
 $("#b-100").click(function () {
     NProgress.done();
 });
+$("#b-rm").click(function () {
+    NProgress.remove();
+});
