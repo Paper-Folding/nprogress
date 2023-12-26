@@ -52,12 +52,10 @@ NProgress.status = null;
  */
 
 NProgress.set = function (n) {
-    var started = NProgress.isStarted();
-
     n = clamp(n, Settings.minimum, 1);
     NProgress.status = n === 1 ? null : n;
 
-    var progress = NProgress.render(!started),
+    var progress = NProgress.render(true),
         bar = progress.querySelector(Settings.barSelector),
         speed = Settings.speed,
         ease = Settings.easing;
@@ -97,10 +95,6 @@ NProgress.show = function () {
     NProgress.dom.classList.remove("hidden");
 };
 
-NProgress.isStarted = function () {
-    return typeof NProgress.status === "number";
-};
-
 /**
  * Shows the progress bar.
  * This is the same as setting the status to 0%, except that it doesn't go backwards.
@@ -113,7 +107,7 @@ NProgress.start = function () {
 
     var work = function () {
         setTimeout(function () {
-            if (!NProgress.status) return;
+            if (NProgress.status == null) return;
             NProgress.trickle();
             work();
         }, Settings.trickleSpeed);
@@ -149,7 +143,7 @@ NProgress.done = function (force) {
 NProgress.inc = function (amount) {
     var n = NProgress.status;
 
-    if (!n) {
+    if (n == null) {
         return NProgress.start();
     } else {
         if (typeof amount !== "number") {
@@ -210,7 +204,6 @@ NProgress.remove = function () {
     var progress = NProgress.dom;
     progress && removeElement(progress);
     NProgress.dom = undefined;
-    NProgress.set(0);
 };
 
 /**
@@ -376,26 +369,11 @@ var css = (function () {
 })();
 
 /**
- * (Internal) Determines if an element or space separated list of class names contains a class name.
- */
-
-function hasClass(element, name) {
-    var list = typeof element == "string" ? element : classList(element);
-    return list.indexOf(" " + name + " ") >= 0;
-}
-
-/**
  * (Internal) Adds a class to an element.
  */
 
 function addClass(element, name) {
-    var oldList = classList(element),
-        newList = oldList + name;
-
-    if (hasClass(oldList, name)) return;
-
-    // Trim the opening space.
-    element.className = newList.substring(1);
+    element.classList.add(name);
 }
 
 /**
@@ -403,26 +381,7 @@ function addClass(element, name) {
  */
 
 function removeClass(element, name) {
-    var oldList = classList(element),
-        newList;
-
-    if (!hasClass(element, name)) return;
-
-    // Replace the class name.
-    newList = oldList.replace(" " + name + " ", " ");
-
-    // Trim the opening and closing spaces.
-    element.className = newList.substring(1, newList.length - 1);
-}
-
-/**
- * (Internal) Gets a space separated list of the class names on the element.
- * The list is wrapped with a single space on each end to facilitate finding
- * matches within the list.
- */
-
-function classList(element) {
-    return (" " + (element.className || "") + " ").replace(/\s+/gi, " ");
+    element.classList.remove(name);
 }
 
 /**

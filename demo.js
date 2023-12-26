@@ -1,14 +1,15 @@
 import NProgress from "./nprogress";
-import $  from "jquery";
+import $ from "jquery";
 
 $("body").show();
-setTimeout(function () {
-    NProgress.done();
-    $(".fade").removeClass("out");
-}, 1000);
+$(".fade").removeClass("out");
 
 $("#b-40").click(function () {
     NProgress.set(0.4);
+});
+
+$("#b-0").click(function () {
+    NProgress.set(0);
 });
 $("#b-inc").click(function () {
     NProgress.inc();
@@ -21,4 +22,8 @@ $("#b-rm").click(function () {
 });
 $("#b-hide").click(function () {
     NProgress.hide();
+});
+
+$("#b-start").click(function () {
+    NProgress.start();
 });
