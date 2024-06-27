@@ -1,5 +1,5 @@
 /**
- * NProgress, (c) 2023 Paper Folding - https://github.com/Paper-Folding/nprogress
+ * NProgress, (c) 2024 Paper Folding - https://github.com/Paper-Folding/nprogress
  * @license MIT
  */
 

@@ -2,15 +2,20 @@
   "name": "@paper-folding/nprogress",
   "author": "Paper-Folding",
   "description": "My modified version of simple slim progress bars",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "repository": {
     "type": "git",
     "url": "https://github.com/Paper-Folding/nprogress.git"
   },
+  "files": [
+    "nprogress.js",
+    "nprogress.d.ts",
+    "nprogress.scss",
+    "*.md"
+  ],
   "scripts": {
     "dev": "vite",
-    "prebuild": "prettier . --write",
-    "build": "tsc && vite build"
+    "build": "prettier . --write && tsc && vite build"
   },
   "main": "nprogress.js",
   "license": "MIT",
@@ -19,5 +24,6 @@
     "prettier": "3.0.3",
     "sass": "^1.63.6",
     "vite": "^4.4.9"
-  }
+  },
+  "packageManager": "yarn@4.3.1"
 }
